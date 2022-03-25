@@ -15,7 +15,7 @@ public class ProductController {
     @GetMapping("/listar")
     public String listar(Model model){
         model.addAttribute("titulo", "Listado de Productos");
-        model.addAttribute("Productos", productDao.findAll());
+        model.addAttribute("productos", productDao.findAll());
         return "listar";
     }
 }
