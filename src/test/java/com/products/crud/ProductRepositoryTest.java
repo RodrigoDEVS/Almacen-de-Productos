@@ -18,10 +18,10 @@ public class ProductRepositoryTest {
     @Test
     public void testAddNew(){
         Producto product = new Producto();
-        product.setName("Lenovo Pad P11");
-        product.setBrand("Lenovo");
+        product.setName("Huawei Matepad 10.4");
+        product.setBrand("Huawei");
         product.setMadeIn("China");
-        product.setPrice(1400000);
+        product.setPrice(850000);
 
         Producto savedProducto = repo.save(product);
 

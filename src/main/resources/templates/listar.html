@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${titulo}">Title</title>
+    <link rel="stylesheet" type="text/css" href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 </head>
 <body>
-    <h1 th:text="${titulo}"></h1>
+    <div class="container-fluid text-center">
+        <h1 th:text="${titulo}"></h1>
+    </div>
+
     <table>
         <thead>
             <tr>
