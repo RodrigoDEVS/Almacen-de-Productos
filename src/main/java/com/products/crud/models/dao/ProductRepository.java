@@ -5,4 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 
 
 public interface ProductRepository extends CrudRepository<Producto, Long> {
+    public Long countById(Long id);
 }

@@ -2,13 +2,14 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title th:text="${titulo}">Title</title>
+    <title >[[${pageTitle}]]</title>
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 </head>
 <body>
     <div class="container-fluid">
-        <h2 class="text-center">Nuevo Producto</h2>
+        <h2 class="text-center">[[${pageTitle}]]</h2>
             <form th:action="@{/products/save}" method="post" th:object="${productos}" style="max-width: 500px; margin: 0 auto;">
+                <input type="hidden" th:field="*{id}">
                 <div class="border border-secondary rounded p-3">
                     <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label">Nombre:</label>
