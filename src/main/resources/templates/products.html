@@ -3,32 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${titulo}">Title</title>
-    <link rel="stylesheet" type="text/css" href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 </head>
 <body>
     <div class="container-fluid text-center">
         <h1 th:text="${titulo}"></h1>
+        <div>
+            <a class="btn btn-primary" th:href="@{/products/new}">Agregar Producto</a>
+        </div>
     </div>
 
-    <table>
-        <thead>
+
+    <div class="text-center">
+        <table class="table table-bordered">
+            <thead class="table-dark">
             <tr>
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Marca</th>
                 <th>Fabricación</th>
                 <th>Precio</th>
+                <th></th>
             </tr>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
             <tr th:each="producto: ${productos}">
                 <td th:text="${producto.id}"></td>
                 <td th:text="${producto.name}"></td>
                 <td th:text="${producto.brand}"></td>
                 <td th:text="${producto.madeIn}"></td>
                 <td th:text="${producto.price}"></td>
+                <td>
+                    <a class="h4" th:href="@{'products/edit/' + ${producto.id}}">Editar</a>
+                    <a class="h4" th:href="@{'products/delete/' + ${producto.id}}">Eliminar</a>
+                </td>
             </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
+
 </body>
 </html>
