@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class ProductController {
@@ -24,7 +25,13 @@ public class ProductController {
     @GetMapping("/products/new")
     public String showNewProductForm(Model model){
         model.addAttribute("titulo", "Nuevo Producto");
-        model.addAttribute("product", new Producto());
-        return "new";
+        model.addAttribute("productos", new Producto());
+        return "product_form";
+    }
+
+    @PostMapping("/products/save")
+    public String saveProduct(Producto productos){
+        service.save(productos);
+        return "redirect:/products";
     }
 }
