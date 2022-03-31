@@ -2,12 +2,12 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title th:text="${titulo}">Title</title>
+    <title th:text="${pageTitle}">Title</title>
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 </head>
 <body>
     <div class="container-fluid text-center">
-        <h1 th:text="${titulo}"></h1>
+        <h1 th:text="${pageTitle}"></h1>
         <div>
             <a class="btn btn-primary" th:href="@{/products/new}">Agregar Producto</a>
         </div>
@@ -26,7 +26,7 @@
                 <th>Marca</th>
                 <th>Fabricación</th>
                 <th>Precio</th>
-                <th></th>
+                <th>Acciones</th>
             </tr>
             </thead>
             <tbody>
@@ -37,8 +37,8 @@
                 <td th:text="${producto.madeIn}"></td>
                 <td th:text="${producto.price}"></td>
                 <td>
-                    <a class="h4" th:href="@{'products/edit/' + ${producto.id}}">Editar</a>
-                    <a class="h4" th:href="@{'products/delete/' + ${producto.id}}">Eliminar</a>
+                    <a type="button" class="btn btn-primary btn-sm" th:href="@{'products/edit/' + ${producto.id}}">Editar</a>
+                    <a type="button" class="btn btn-danger btn-sm" th:href="@{'products/delete/' + ${producto.id}}">Eliminar</a>
                 </td>
             </tr>
             </tbody>

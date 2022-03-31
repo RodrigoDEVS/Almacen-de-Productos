@@ -9,7 +9,7 @@ public class IndexController {
 
     @GetMapping("")
     public String showHomePage(Model model){
-        model.addAttribute("tituloHome", "Página Inicial");
+        model.addAttribute("pageTitle", "Página Inicial");
         return "index";
     }
 }

@@ -27,7 +27,7 @@ public class ProductController {
 
     @GetMapping("/products/new")
     public String showNewProductForm(Model model){
-        model.addAttribute("titulo", "Nuevo Producto");
+        model.addAttribute("pageTitle", "Nuevo Producto");
         model.addAttribute("productos", new Producto());
         return "product_form";
     }
